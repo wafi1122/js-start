@@ -46,3 +46,30 @@ let str2 = " Shirt"
 let str3 = " Wafi"
 let str4 = str1 + str2 + str3
 console.log(str4)
+
+
+
+console.log('1' + 2);
+console.log(1 + "2");
+console.log("1" + 2 + 2); //this ans will be a 122 because of string conversion
+console.log(1 + 2 + '2'); // but here the ans will be a 32
+
+
+console.log((3 + 4) * 5 % 3); //write a code like this
+
+
+//boolean conversion
+
+console.log(+true) //the ans will be a 1
+console.log(+"") // the ans will be a 0
+
+
+// in some time code will written in this form
+
+let num1 , num2 ,num3
+num1 = num2 = num3 = 2+2
+
+
+let gameCounter = 100
+gameCounter++; //some time written in ++gameCounter
+console.log(gameCounter)
