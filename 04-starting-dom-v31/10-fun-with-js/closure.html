@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+
+<body>
+    <button id="orange"></button>
+    <button id="green"></button>
+</body>
+<script>
+
+    // lexical scoping
+    function init() {
+        var name = "Mozilla";
+        function displayName() {
+            console.log(name);
+        }
+        displayName(); // we have a access of outer function but outer functionn canot access the inner function
+    }
+    init();
+
+
+    // closure scoping
+    function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+            console.log(name);
+        }
+        return displayName;
+    }
+
+    const myFunc = makeFunc();
+    myFunc();
+
+
+
+</script>
+<script>
+    // document.getElementById('orange').onclick = function(){
+    //     document.body.style.backgroundColor = `orange`
+        
+    // }
+    // document.getElementById('green').onclick = function(){
+    //     document.body.style.backgroundColor = `green`
+
+    // }
+
+    function clickHandler(color){
+        // document.body.style.backgoroundColor = `${color}`
+        return function(){
+        document.body.style.backgroundColor = `${color}`
+
+        }
+    }
+    document.getElementById('orange').onclick = clickHandler('orange')
+    document.getElementById('green').onclick = clickHandler('green')
+
+
+
+</script>
+
+</html>
